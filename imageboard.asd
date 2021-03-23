@@ -8,7 +8,8 @@
                "envy"
                "cl-ppcre"
                "uiop"
-			   "datafly"
+	       "datafly"
+	       "cl-markdown"
 
                ;; for @route annotation
                "cl-syntax-annot"
