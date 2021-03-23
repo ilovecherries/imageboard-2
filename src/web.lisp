@@ -26,15 +26,15 @@
 ;;
 ;; Routing rules
 
-(defroute "/" ()
+(defroute "*/" ()
   (render #P"index.html"))
 
-(defroute "/imageboard" ()
+(defroute "*/imageboard" ()
   (render #P"imageboard.html"
 		  (list :posts (mito:select-dao 'post
 						 (sxql:where (:= :parent_id 1))))))
 
-(defroute ("/imageboard" :method :POST) (&key _parsed)
+(defroute ("*/imageboard" :method :POST) (&key _parsed)
   (format t "~S" (cdr (assoc "content" _parsed :test #'string=)))
   (let ((content (cdr (assoc "content" _parsed :test #'string=)))
 		(name (cdr (assoc "name" _parsed :test #'string=))))

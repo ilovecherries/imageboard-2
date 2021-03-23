@@ -44,18 +44,6 @@
 (defun add-thread ()
   (mito:insert-dao (make-instance 'thread)))
 
-(defun add-test-post ()
-  (mito:insert-dao (make-instance 'post :content "pony"
-										:parent_id 1
-										:attachment "https://smilebasicsource.com/api/File/raw/6373")))
-
-(defun get-posts (id)
-  (mito:select))
-
-;; (map 'list (lambda (x) (post-content x))
-;; 	 (mito:select-dao 'post
-;; 	   (sxql:where (:= :parent_id 1))))
-
 (defun connection-settings (&optional (db :maindb))
   (cdr (assoc db (config :databases))))
 

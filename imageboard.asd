@@ -8,6 +8,7 @@
                "envy"
                "cl-ppcre"
                "uiop"
+			   "datafly"
 
                ;; for @route annotation
                "cl-syntax-annot"
@@ -16,7 +17,6 @@
                "djula"
 
                ;; for DB
-               "datafly"
                "sxql"
 			   "mito")
   :components ((:module "src"
